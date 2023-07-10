@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+</head>
+<body>
+<div id="app">
+  <uruom v-for="item in items" v-bind:uu="item"></uruom>
+
+</div>
+<!--组件：传递给组件中的值：props-->
+<script>
+<!--  定义一个Vue组件-->
+  Vue.component("uruom",{
+    props:['uu'],
+    template:  '<li>{{uu}}</li>'
+  });
+  var vm =  new Vue({
+    el: "#app",
+    data: {
+      items: ["Java","Linux","前端"],
+      message: "幽若梦",
+      checked: false,
+      uruom: '',
+      selected: ''
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
